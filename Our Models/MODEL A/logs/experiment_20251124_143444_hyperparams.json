@@ -1,0 +1,10 @@
+{
+  "batch_size": 16,
+  "clip_embed_dim": 512,
+  "num_heads": 8,
+  "bert_model_name": "bert-base-uncased",
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "num_epochs": 30,
+  "experiment_name": "experiment_20251124_143444"
+}

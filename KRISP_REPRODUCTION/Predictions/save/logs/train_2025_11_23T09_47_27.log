@@ -1,0 +1,26 @@
+2025-11-23T09:47:27 | INFO | mmf : Logging to: ./save/train.log
+2025-11-23T09:47:27 | INFO | mmf_cli.run : Namespace(config_override=None, local_rank=None, opts=['config=/data1/souradeepd/Krisp/mmf/projects/krisp/configs/krisp/okvqa/defaults.yaml', 'model=krisp', 'dataset=okvqa', 'run_type=test', 'checkpoint.resume_file=/data1/souradeepd/Krisp/mmf/save/best.ckpt', 'checkpoint.resume_zoo=False', 'evaluation.predict=true'])
+2025-11-23T09:47:27 | INFO | mmf_cli.run : Torch version: 1.13.1
+2025-11-23T09:47:27 | INFO | mmf.utils.general : CUDA Device 0 is: NVIDIA RTX A6000
+2025-11-23T09:47:27 | INFO | mmf_cli.run : Using seed 29402777
+2025-11-23T09:47:27 | INFO | mmf.trainers.mmf_trainer : Loading datasets
+2025-11-23T09:47:30 | INFO | mmf.datasets.multi_datamodule : Multitasking disabled by default for single dataset training
+2025-11-23T09:47:30 | INFO | mmf.datasets.multi_datamodule : Multitasking disabled by default for single dataset training
+2025-11-23T09:47:30 | INFO | mmf.datasets.multi_datamodule : Multitasking disabled by default for single dataset training
+2025-11-23T09:47:30 | INFO | mmf.trainers.mmf_trainer : Loading model
+2025-11-23T09:47:30 | INFO | torch.distributed.nn.jit.instantiator : Created a temporary directory at /tmp/tmp44paqxqf
+2025-11-23T09:47:30 | INFO | torch.distributed.nn.jit.instantiator : Writing /tmp/tmp44paqxqf/_remote_module_non_scriptable.py
+2025-11-23T09:48:05 | INFO | mmf.trainers.mmf_trainer : Loading optimizer
+2025-11-23T09:48:05 | INFO | mmf.trainers.mmf_trainer : Loading metrics
+2025-11-23T09:48:05 | INFO | mmf.utils.checkpoint : Loading checkpoint
+2025-11-23T09:48:13 | WARNING | mmf : Key data_parallel is not present in registry, returning default value of None
+2025-11-23T09:48:13 | WARNING | mmf : Key distributed is not present in registry, returning default value of None
+2025-11-23T09:48:13 | INFO | mmf.utils.checkpoint : Checkpoint loaded.
+2025-11-23T09:48:13 | INFO | mmf.utils.checkpoint : Current num updates: 84000
+2025-11-23T09:48:13 | INFO | mmf.utils.checkpoint : Current iteration: 84000
+2025-11-23T09:48:13 | INFO | mmf.utils.checkpoint : Current epoch: 447
+2025-11-23T09:48:13 | INFO | mmf.trainers.core.evaluation_loop : Starting test inference predictions
+2025-11-23T09:48:13 | INFO | mmf.common.test_reporter : Predicting for okvqa
+2025-11-23T09:52:21 | INFO | mmf.common.test_reporter : Wrote predictions for okvqa to /data1/souradeepd/gait2health/save/okvqa_krisp_29402777/reports/okvqa_run_test_2025-11-23T09:52:21.json
+2025-11-23T09:52:21 | INFO | mmf.trainers.core.evaluation_loop : Finished predicting. Loaded 106
+2025-11-23T09:52:21 | INFO | mmf.trainers.core.evaluation_loop :  -- skipped 0 batches.

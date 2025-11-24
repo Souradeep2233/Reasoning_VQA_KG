@@ -1,0 +1,122 @@
+2025-11-24 14:34:44,181 - INFO - Using device: cuda
+2025-11-24 14:34:44,181 - INFO - Experiment: experiment_20251124_143444
+2025-11-24 14:34:46,072 - INFO - CLIP model (ViT-B/32) loaded.
+2025-11-24 14:34:46,545 - INFO - Loaded pre-trained BERT LM Head (bert-base-uncased).
+2025-11-24 14:34:47,188 - INFO - Loaded BERT Tokenizer (bert-base-uncased).
+2025-11-24 14:34:47,188 - INFO - Initializing ConceptNet Feature Extractor
+2025-11-24 14:34:47,374 - INFO - loading projection weights from /home/souradeepd/Desktop/New_arch_KIT/numberbatch-en-19.08.txt
+2025-11-24 14:35:41,225 - INFO - KeyedVectors lifecycle event {'msg': 'loaded (516782, 300) matrix of type float32 from /home/souradeepd/Desktop/New_arch_KIT/numberbatch-en-19.08.txt', 'binary': False, 'encoding': 'utf8', 'datetime': '2025-11-24T14:35:41.224428', 'gensim': '4.4.0', 'python': '3.10.19 (main, Oct 21 2025, 16:43:05) [GCC 11.2.0]', 'platform': 'Linux-6.14.0-35-generic-x86_64-with-glibc2.39', 'event': 'load_word2vec_format'}
+2025-11-24 14:35:41,225 - INFO - ConceptNet features loaded. Embedding dim: 300
+2025-11-24 14:35:41,225 - INFO - Initializing Improved Model for Training
+2025-11-24 14:35:41,264 - INFO - Applying LoRA
+2025-11-24 14:35:41,283 - INFO - Trainable parameters summary:
+2025-11-24 14:35:41,285 - INFO - Optimizer: AdamW
+2025-11-24 14:35:41,285 - INFO - Loss Function: CrossEntropyLoss
+2025-11-24 14:35:41,285 - INFO - Loading Datasets
+2025-11-24 14:35:46,695 - INFO - Scheduler: OneCycleLR
+2025-11-24 14:35:46,695 - INFO - All DataLoaders Created
+2025-11-24 14:35:46,695 - INFO - Starting Training for 30 Epochs
+2025-11-24 14:35:46,696 - INFO - Epoch 01/30 - Training
+2025-11-24 14:35:47,155 - INFO - Epoch 01 | Batch 001/7 | Loss: 10.6023 | Acc: 0.00% | LR: 2.30e-05
+2025-11-24 14:35:47,962 - INFO - Epoch 01 | Batch 006/7 | Loss: 10.2427 | Acc: 0.00% | LR: 1.19e-04
+2025-11-24 14:35:48,017 - INFO - Epoch 01 Training Summary - Loss: 10.3127, Acc: 0.00%
+2025-11-24 14:35:48,033 - INFO - Epoch 01 - Validation
+2025-11-24 14:35:49,152 - INFO - *** New best model saved with val_acc: 14.00% ***
+2025-11-24 14:35:49,152 - INFO - Epoch 01 SUMMARY
+2025-11-24 14:35:49,152 - INFO - Train Loss: 10.3127 | Train Acc: 0.00%
+2025-11-24 14:35:49,152 - INFO - Val. Loss:  9.4426 | Val. Acc:  14.00%
+2025-11-24 14:35:49,152 - INFO - Best Val Acc: 14.00% | Patience: 0/5
+2025-11-24 14:35:50,862 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:35:50,863 - INFO - Epoch 02/30 - Training
+2025-11-24 14:35:51,013 - INFO - Epoch 02 | Batch 001/7 | Loss: 9.4616 | Acc: 6.25% | LR: 1.86e-04
+2025-11-24 14:35:51,907 - INFO - Epoch 02 | Batch 006/7 | Loss: 8.4050 | Acc: 6.25% | LR: 3.69e-04
+2025-11-24 14:35:51,976 - INFO - Epoch 02 Training Summary - Loss: 8.6226, Acc: 14.00%
+2025-11-24 14:35:51,987 - INFO - Epoch 02 - Validation
+2025-11-24 14:36:02,064 - INFO - *** New best model saved with val_acc: 22.00% ***
+2025-11-24 14:36:02,064 - INFO - Epoch 02 SUMMARY
+2025-11-24 14:36:02,064 - INFO - Train Loss: 8.6226 | Train Acc: 14.00%
+2025-11-24 14:36:02,064 - INFO - Val. Loss:  6.7599 | Val. Acc:  22.00%
+2025-11-24 14:36:02,064 - INFO - Best Val Acc: 22.00% | Patience: 0/5
+2025-11-24 14:36:03,239 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:03,240 - INFO - Epoch 03/30 - Training
+2025-11-24 14:36:03,388 - INFO - Epoch 03 | Batch 001/7 | Loss: 6.8304 | Acc: 6.25% | LR: 4.30e-04
+2025-11-24 14:36:04,101 - INFO - Epoch 03 | Batch 006/7 | Loss: 4.2384 | Acc: 12.50% | LR: 5.00e-04
+2025-11-24 14:36:04,152 - INFO - Epoch 03 Training Summary - Loss: 5.1727, Acc: 15.00%
+2025-11-24 14:36:04,164 - INFO - Epoch 03 - Validation
+2025-11-24 14:36:14,782 - INFO - *** New best model saved with val_acc: 24.00% ***
+2025-11-24 14:36:14,782 - INFO - Epoch 03 SUMMARY
+2025-11-24 14:36:14,782 - INFO - Train Loss: 5.1727 | Train Acc: 15.00%
+2025-11-24 14:36:14,782 - INFO - Val. Loss:  7.0228 | Val. Acc:  24.00%
+2025-11-24 14:36:14,782 - INFO - Best Val Acc: 24.00% | Patience: 0/5
+2025-11-24 14:36:15,890 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:15,891 - INFO - Epoch 04/30 - Training
+2025-11-24 14:36:16,054 - INFO - Epoch 04 | Batch 001/7 | Loss: 3.2278 | Acc: 6.25% | LR: 5.00e-04
+2025-11-24 14:36:16,877 - INFO - Epoch 04 | Batch 006/7 | Loss: 3.6432 | Acc: 18.75% | LR: 4.98e-04
+2025-11-24 14:36:16,941 - INFO - Epoch 04 Training Summary - Loss: 3.6859, Acc: 13.00%
+2025-11-24 14:36:16,953 - INFO - Epoch 04 - Validation
+2025-11-24 14:36:25,843 - INFO - *** New best model saved with val_acc: 26.00% ***
+2025-11-24 14:36:25,844 - INFO - Epoch 04 SUMMARY
+2025-11-24 14:36:25,844 - INFO - Train Loss: 3.6859 | Train Acc: 13.00%
+2025-11-24 14:36:25,844 - INFO - Val. Loss:  8.0771 | Val. Acc:  26.00%
+2025-11-24 14:36:25,844 - INFO - Best Val Acc: 26.00% | Patience: 0/5
+2025-11-24 14:36:26,901 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:26,902 - INFO - Epoch 05/30 - Training
+2025-11-24 14:36:27,060 - INFO - Epoch 05 | Batch 001/7 | Loss: 3.6232 | Acc: 12.50% | LR: 4.97e-04
+2025-11-24 14:36:27,776 - INFO - Epoch 05 | Batch 006/7 | Loss: 3.6483 | Acc: 31.25% | LR: 4.93e-04
+2025-11-24 14:36:27,828 - INFO - Epoch 05 Training Summary - Loss: 3.7157, Acc: 16.00%
+2025-11-24 14:36:27,842 - INFO - Epoch 05 - Validation
+2025-11-24 14:36:28,248 - INFO - Epoch 05 SUMMARY
+2025-11-24 14:36:28,248 - INFO - Train Loss: 3.7157 | Train Acc: 16.00%
+2025-11-24 14:36:28,248 - INFO - Val. Loss:  8.5920 | Val. Acc:  22.00%
+2025-11-24 14:36:28,248 - INFO - Best Val Acc: 26.00% | Patience: 1/5
+2025-11-24 14:36:29,349 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:29,349 - INFO - Epoch 06/30 - Training
+2025-11-24 14:36:29,498 - INFO - Epoch 06 | Batch 001/7 | Loss: 3.2856 | Acc: 25.00% | LR: 4.91e-04
+2025-11-24 14:36:30,201 - INFO - Epoch 06 | Batch 006/7 | Loss: 3.7642 | Acc: 12.50% | LR: 4.85e-04
+2025-11-24 14:36:30,253 - INFO - Epoch 06 Training Summary - Loss: 3.6494, Acc: 15.00%
+2025-11-24 14:36:30,266 - INFO - Epoch 06 - Validation
+2025-11-24 14:36:30,689 - INFO - Epoch 06 SUMMARY
+2025-11-24 14:36:30,689 - INFO - Train Loss: 3.6494 | Train Acc: 15.00%
+2025-11-24 14:36:30,689 - INFO - Val. Loss:  8.4832 | Val. Acc:  24.00%
+2025-11-24 14:36:30,689 - INFO - Best Val Acc: 26.00% | Patience: 2/5
+2025-11-24 14:36:31,900 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:31,900 - INFO - Epoch 07/30 - Training
+2025-11-24 14:36:32,043 - INFO - Epoch 07 | Batch 001/7 | Loss: 3.3618 | Acc: 18.75% | LR: 4.82e-04
+2025-11-24 14:36:32,772 - INFO - Epoch 07 | Batch 006/7 | Loss: 3.5299 | Acc: 6.25% | LR: 4.73e-04
+2025-11-24 14:36:32,823 - INFO - Epoch 07 Training Summary - Loss: 3.3118, Acc: 19.00%
+2025-11-24 14:36:32,832 - INFO - Epoch 07 - Validation
+2025-11-24 14:36:33,296 - INFO - Epoch 07 SUMMARY
+2025-11-24 14:36:33,296 - INFO - Train Loss: 3.3118 | Train Acc: 19.00%
+2025-11-24 14:36:33,296 - INFO - Val. Loss:  7.7622 | Val. Acc:  24.00%
+2025-11-24 14:36:33,296 - INFO - Best Val Acc: 26.00% | Patience: 3/5
+2025-11-24 14:36:34,524 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:34,525 - INFO - Epoch 08/30 - Training
+2025-11-24 14:36:34,694 - INFO - Epoch 08 | Batch 001/7 | Loss: 2.4291 | Acc: 37.50% | LR: 4.70e-04
+2025-11-24 14:36:35,412 - INFO - Epoch 08 | Batch 006/7 | Loss: 3.4695 | Acc: 18.75% | LR: 4.59e-04
+2025-11-24 14:36:35,462 - INFO - Epoch 08 Training Summary - Loss: 3.1062, Acc: 26.00%
+2025-11-24 14:36:35,473 - INFO - Epoch 08 - Validation
+2025-11-24 14:36:36,003 - INFO - Epoch 08 SUMMARY
+2025-11-24 14:36:36,004 - INFO - Train Loss: 3.1062 | Train Acc: 26.00%
+2025-11-24 14:36:36,004 - INFO - Val. Loss:  7.8122 | Val. Acc:  18.00%
+2025-11-24 14:36:36,004 - INFO - Best Val Acc: 26.00% | Patience: 4/5
+2025-11-24 14:36:37,081 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:37,081 - INFO - Epoch 09/30 - Training
+2025-11-24 14:36:37,232 - INFO - Epoch 09 | Batch 001/7 | Loss: 3.0260 | Acc: 18.75% | LR: 4.54e-04
+2025-11-24 14:36:38,152 - INFO - Epoch 09 | Batch 006/7 | Loss: 2.6895 | Acc: 25.00% | LR: 4.42e-04
+2025-11-24 14:36:38,204 - INFO - Epoch 09 Training Summary - Loss: 2.8562, Acc: 27.00%
+2025-11-24 14:36:38,215 - INFO - Epoch 09 - Validation
+2025-11-24 14:36:38,624 - INFO - Epoch 09 SUMMARY
+2025-11-24 14:36:38,624 - INFO - Train Loss: 2.8562 | Train Acc: 27.00%
+2025-11-24 14:36:38,624 - INFO - Val. Loss:  7.7288 | Val. Acc:  26.00%
+2025-11-24 14:36:38,624 - INFO - Best Val Acc: 26.00% | Patience: 5/5
+2025-11-24 14:36:39,715 - INFO - Training plots saved to plots/experiment_20251124_143444_*.png
+2025-11-24 14:36:39,715 - INFO - Early stopping triggered!
+2025-11-24 14:36:39,715 - INFO - Loading Best Model for Testing
+2025-11-24 14:36:40,068 - INFO - Running Final Test
+2025-11-24 14:36:40,209 - INFO - Test Batch 1/4 - Acc: 12.50%
+2025-11-24 14:36:40,340 - INFO - Test Batch 2/4 - Acc: 12.50%
+2025-11-24 14:36:40,472 - INFO - Test Batch 3/4 - Acc: 25.00%
+2025-11-24 14:36:40,495 - INFO - Test Batch 4/4 - Acc: 50.00%
+2025-11-24 14:36:40,501 - INFO - --- FINAL TEST RESULTS ---
+2025-11-24 14:36:40,501 - INFO - Test Accuracy: 18.00%
+2025-11-24 14:36:40,501 - INFO - Best Validation Accuracy: 26.00%

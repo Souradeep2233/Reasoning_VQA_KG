@@ -1,0 +1,5 @@
+{
+  "final_test_accuracy": 18.0,
+  "best_validation_accuracy": 26.0,
+  "class_wise_accuracy": {
+    

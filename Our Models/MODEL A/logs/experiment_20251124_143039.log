@@ -1,0 +1,19 @@
+2025-11-24 14:30:39,629 - INFO - Using device: cuda
+2025-11-24 14:30:39,629 - INFO - Experiment: experiment_20251124_143039
+2025-11-24 14:30:41,582 - INFO - CLIP model (ViT-B/32) loaded.
+2025-11-24 14:30:42,047 - INFO - Loaded pre-trained BERT LM Head (bert-base-uncased).
+2025-11-24 14:30:42,696 - INFO - Loaded BERT Tokenizer (bert-base-uncased).
+2025-11-24 14:30:42,696 - INFO - Initializing ConceptNet Feature Extractor
+2025-11-24 14:30:42,883 - INFO - loading projection weights from /home/souradeepd/Desktop/New_arch_KIT/numberbatch-en-19.08.txt
+2025-11-24 14:31:38,854 - INFO - KeyedVectors lifecycle event {'msg': 'loaded (516782, 300) matrix of type float32 from /home/souradeepd/Desktop/New_arch_KIT/numberbatch-en-19.08.txt', 'binary': False, 'encoding': 'utf8', 'datetime': '2025-11-24T14:31:38.853639', 'gensim': '4.4.0', 'python': '3.10.19 (main, Oct 21 2025, 16:43:05) [GCC 11.2.0]', 'platform': 'Linux-6.14.0-35-generic-x86_64-with-glibc2.39', 'event': 'load_word2vec_format'}
+2025-11-24 14:31:38,854 - INFO - ConceptNet features loaded. Embedding dim: 300
+2025-11-24 14:31:38,854 - INFO - Initializing Improved Model for Training
+2025-11-24 14:31:38,901 - INFO - Applying LoRA
+2025-11-24 14:31:38,920 - INFO - Trainable parameters summary:
+2025-11-24 14:31:38,921 - INFO - Optimizer: AdamW
+2025-11-24 14:31:38,922 - INFO - Loss Function: CrossEntropyLoss
+2025-11-24 14:31:38,922 - INFO - Loading Datasets
+2025-11-24 14:31:44,543 - INFO - Scheduler: OneCycleLR
+2025-11-24 14:31:44,543 - INFO - All DataLoaders Created
+2025-11-24 14:31:44,543 - INFO - Starting Training for 30 Epochs
+2025-11-24 14:31:44,544 - INFO - Epoch 01/30 - Training

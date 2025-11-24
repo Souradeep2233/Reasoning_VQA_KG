@@ -1,0 +1,5 @@
+2025-10-10T11:58:44 | INFO | mmf : Logging to: ./save/train.log
+2025-10-10T11:58:44 | INFO | mmf_cli.run : Namespace(config_override=None, local_rank=None, opts=['config=mmf/projects/krisp/configs/krisp/okvqa/train_val.yaml', 'run_type=train_val', 'dataset=okvqa', 'model=krisp'])
+2025-10-10T11:58:44 | INFO | mmf_cli.run : Torch version: 1.13.1
+2025-10-10T11:58:44 | INFO | mmf_cli.run : Using seed 47220118
+2025-10-10T11:58:44 | INFO | mmf.trainers.mmf_trainer : Loading datasets

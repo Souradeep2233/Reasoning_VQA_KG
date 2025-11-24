@@ -1,0 +1,6 @@
+2025-11-23T02:24:33 | INFO | mmf : Logging to: ./save/train.log
+2025-11-23T02:24:33 | INFO | mmf_cli.run : Namespace(config_override=None, local_rank=None, opts=['config=/data1/souradeepd/Krisp/mmf/projects/krisp/configs/krisp/okvqa/defaults.yaml', 'model=krisp', 'dataset=okvqa', 'run_type=test', 'checkpoint.resume_file=/data1/souradeepd/Krisp/mmf/save/best.ckpt', 'checkpoint.resume_zoo=False', 'evaluation.predict=true'])
+2025-11-23T02:24:33 | INFO | mmf_cli.run : Torch version: 1.13.1
+2025-11-23T02:24:33 | INFO | mmf.utils.general : CUDA Device 0 is: NVIDIA RTX A6000
+2025-11-23T02:24:33 | INFO | mmf_cli.run : Using seed 35060568
+2025-11-23T02:24:33 | INFO | mmf.trainers.mmf_trainer : Loading datasets

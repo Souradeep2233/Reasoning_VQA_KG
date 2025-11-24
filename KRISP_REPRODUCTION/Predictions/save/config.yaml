@@ -1,0 +1,319 @@
+config_version: 1.0
+training:
+  trainer: mmf
+  seed: 29402777
+  experiment_name: run
+  max_updates: 88000
+  max_epochs: null
+  log_interval: 100
+  logger_level: info
+  log_format: simple
+  log_detailed_config: false
+  should_not_log: false
+  colored_logs: true
+  tensorboard: false
+  cudnn_benchmark: false
+  wandb:
+    enabled: false
+    entity: null
+    project: mmf
+    name: run
+    log_checkpoint: false
+  batch_size: 48
+  batch_size_per_device: null
+  update_frequency: 1
+  num_workers: 4
+  fast_read: false
+  dataset_size_proportional_sampling: true
+  pin_memory: false
+  persistent_workers: true
+  checkpoint_interval: 1000
+  evaluation_interval: 1000
+  clip_gradients: false
+  clip_norm_mode: all
+  early_stop:
+    enabled: false
+    patience: 4000
+    criteria: okvqa/vqa_accuracy
+    minimize: false
+  lr_scheduler: true
+  lr_steps: []
+  lr_ratio: 0.1
+  use_warmup: false
+  warmup_factor: 0.2
+  warmup_iterations: 1000
+  device: cuda
+  local_rank: null
+  verbose_dump: false
+  find_unused_parameters: true
+  evaluate_metrics: false
+  detect_anomaly: false
+  fp16: false
+  callbacks: []
+  exit_on_nan_losses: true
+trainer:
+  type: lightning
+  params:
+    gpus: 1
+    num_nodes: 1
+    precision: 32
+    deterministic: false
+    benchmark: false
+    max_steps: 22000
+    max_epochs: null
+    gradient_clip_val: 0.0
+    num_sanity_val_steps: 0
+    enable_checkpointing: true
+    accumulate_grad_batches: 1
+    val_check_interval: 1000
+    log_every_n_steps: 100
+    logger: false
+    limit_val_batches: 1.0
+    enable_progress_bar: false
+    resume_from_checkpoint: null
+evaluation:
+  metrics:
+  - vqa_accuracy
+  use_cpu: false
+  predict: 'true'
+  predict_file_format: json
+  reporter:
+    type: file
+    params: {}
+model_config:
+  krisp:
+    visual_bert:
+      hidden_size: 768
+      hidden_dropout_prob: 0.1
+      training_head_type: classification
+      pooler_strategy: vqa
+      bert_model_name: bert-base-uncased
+      visual_embedding_dim: 2048
+      special_visual_initialize: true
+      embedding_strategy: plain
+      bypass_transformer: false
+      output_attentions: false
+      output_hidden_states: false
+      random_initialize: false
+      freeze_base: false
+      finetune_lr_multiplier: 1
+      num_hidden_layers: 12
+      num_attention_heads: 12
+      zerobias: true
+      load_from_pretrained: false
+      pretrained_file: ''
+    graph_module:
+      kg_path: okvqa/defaults/annotations/annotations/graphs/full_graph.pth.tar
+      dataset_info_path: okvqa/defaults/annotations/annotations/graph_vocab/okvqa_dataset_info.pth.tar
+      node2vec_filename: okvqa/defaults/annotations/annotations/node2vec/node2vec.pkl
+      embedding_file: okvqa/defaults/annotations/annotations/glove.840B.300d.txt
+      add_w2v_multiword: false
+      vocab_file: okvqa/defaults/annotations/annotations/answer_vocab_count10.txt
+      okvqa_v_mode: v1.1
+      prune_culdesacs: false
+      node_inputs:
+        question: 1
+        classifiers: 4
+        w2v: 300
+      use_w2v: true
+      use_conf: true
+      use_q: true
+      use_img: true
+      use_partial_img: false
+      partial_img_idx: 0
+      node_hid_dim: 128
+      num_gcn_conv: 2
+      use_batch_norm: true
+      use_dropout: false
+      dropout_p: 0
+      output_type: hidden_ans
+      gcn_type: RGCN
+      graph_vocab_file: okvqa/defaults/annotations/annotations/graph_vocab/graph_vocab.pth.tar
+      num_labels: 2250
+      output_order: alpha
+      output_special_node: false
+      add_ans_nodes: false
+    num_labels: 2250
+    output_combine: concat
+    graph_logit_mode: mc4
+    losses:
+    - type: logit_bce
+    zerobias: true
+    feed_graph_to_vb: false
+    feed_vb_to_graph: true
+    feed_q_to_graph: false
+    feed_mode: feed_vb_hid_to_graph
+    feed_special_node: false
+    topk_ans_feed: 10
+    compress_crossmodel: true
+    crossmodel_compress_dim: 128
+    analysis_mode: false
+    noback_vb_to_graph: false
+    noback_vb_to_blinear: false
+    instance_graph: false
+    model: krisp
+  output_combine: graph_pointer
+  losses:
+  - type: logit_bce
+dataset_config:
+  okvqa:
+    data_dir: /data1/souradeepd/Caches/Caches/torch/mmf/data/datasets
+    depth_first: false
+    fast_read: false
+    use_images: false
+    use_features: true
+    zoo_requirements:
+    - okvqa.defaults
+    - okvqa
+    images:
+      train:
+      - okvqa/defaults/images/
+      val:
+      - okvqa/defaults/images/
+      test:
+      - okvqa/defaults/images/
+    features:
+      train:
+      - okvqa/defaults/features/features_fc6/COCO_trainval2014.lmdb
+      val:
+      - okvqa/defaults/features/features_fc6/COCO_trainval2014.lmdb
+      test:
+      - okvqa/defaults/features/features_fc6/COCO_trainval2014.lmdb
+    annotations:
+      train:
+      - okvqa/defaults/annotations/annotations/imdb_train1.npy
+      val:
+      - okvqa/defaults/annotations/annotations/imdb_val1.npy
+      test:
+      - okvqa/defaults/annotations/annotations/imdb_test.npy
+    max_features: 100
+    processors:
+      text_processor:
+        type: bert_tokenizer
+        params:
+          max_length: 14
+          vocab:
+            type: intersected
+            embedding_name: glove.6B.300d
+            vocab_file: okvqa/defaults/extras/vocabs/vocabulary_100k.txt
+          preprocessor:
+            type: simple_sentence
+            params: {}
+          tokenizer_config:
+            type: bert-base-uncased
+            params:
+              do_lower_case: true
+          mask_probability: 0
+          max_seq_length: 128
+      answer_processor:
+        type: graph_vqa_answer
+        params:
+          num_answers: 10
+          vocab_file: okvqa/defaults/annotations/annotations/answer_vocab_count10.txt
+          preprocessor:
+            type: simple_word
+            params: {}
+          concat_scores: true
+          graph_vocab_file: okvqa/defaults/annotations/annotations/graph_vocab/graph_vocab.pth.tar
+      image_processor:
+        type: torchvision_transforms
+        params:
+          transforms:
+          - type: Resize
+            params:
+              size:
+              - 256
+              - 256
+          - type: CenterCrop
+            params:
+              size:
+              - 224
+              - 224
+          - ToTensor
+          - GrayScaleTo3Channels
+          - type: Normalize
+            params:
+              mean:
+              - 0.485
+              - 0.456
+              - 0.406
+              std:
+              - 0.12221994
+              - 0.12145835
+              - 0.14380469
+      context_processor:
+        type: fasttext
+        params:
+          download_initially: false
+          max_length: 50
+          model_file: wiki.en.bin
+      ocr_token_processor:
+        type: simple_word
+        params: {}
+      bbox_processor:
+        type: bbox
+        params:
+          max_length: 50
+    return_features_info: true
+    use_ocr: false
+    use_ocr_info: false
+    dump_output_dir: ./save
+    dump_pred_info: false
+datasets: okvqa
+model: krisp
+config: /data1/souradeepd/Krisp/mmf/projects/krisp/configs/krisp/okvqa/defaults.yaml
+run_type: test
+optimizer:
+  allow_unused_parameters: false
+  enable_state_sharding: false
+  type: adam_w
+  params:
+    lr: 5.0e-05
+    eps: 1.0e-08
+    weight_decay: 0
+scheduler:
+  type: warmup_cosine
+  params:
+    num_warmup_steps: 2000
+    num_training_steps: 88000
+env:
+  cache_dir: /home/souradeepd/.cache/torch/mmf
+  dataset_zoo: configs/zoo/datasets.yaml
+  model_zoo: configs/zoo/models.yaml
+  data_dir: /data1/souradeepd/Caches/Caches/torch/mmf/data
+  save_dir: ./save
+  log_dir: ''
+  report_dir: ''
+  tensorboard_logdir: ''
+  wandb_logdir: ''
+  user_dir: ''
+distributed:
+  init_method: null
+  rank: 0
+  port: -1
+  backend: nccl
+  world_size: 1
+  no_spawn: false
+checkpoint:
+  resume: false
+  resume_file: /data1/souradeepd/Krisp/mmf/save/best.ckpt
+  resume_best: false
+  resume_pretrained: false
+  resume_zoo: false
+  zoo_config_override: false
+  pretrained_state_mapping:
+    model.bert: model.bert
+    graph_module: graph_module
+  max_to_keep: -1
+  save_git_details: true
+  reset:
+    all: false
+    optimizer: false
+    counts: false
+    fp16_scaler: false
+multitasking:
+  enabled: true
+  type: size_proportional
+  params: {}
+start_rank: 0
+device_id: 0
