@@ -18,9 +18,9 @@ Both models use frozen CLIP encoders with trainable projection layers, knowledge
 **Model A:** Direct knowledge concatenation with cross-attention  
 **Model B:** Two-stage attention (visual-question fusion → knowledge grounding)
 
-![Architecture Comparison](Our%20Models/Images/Screenshot%202026-02-01%20at%2011.46.47%C2%A0PM.png)
+![Architecture Comparison](Our%20Models/Images/architecture.png)
 
-![Model Performance](Our%20Models/Images/Screenshot%202026-02-01%20at%2011.46.57%C2%A0PM.png)
+![Model Performance](Our%20Models/Images/performance.png)
 
 ## Repository Structure
 
@@ -51,9 +51,9 @@ Predictions/                 # Prediction analysis tools
 
 *Relative to original KRISP baseline
 
-![Training Dynamics](Our%20Models/Images/Screenshot%202026-02-01%20at%2011.47.07%C2%A0PM.png)
+![Training Dynamics](Our%20Models/Images/training.png)
 
-![Sample Outputs](Our%20Models/Images/Screenshot%202026-02-01%20at%2011.47.15%C2%A0PM.png)
+![Sample Outputs](Our%20Models/Images/predictions.png)
 
 ## Setup
 
