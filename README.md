@@ -1,6 +1,8 @@
 # Lightweight KRISP Reproduction
 
 A minimal reproduction of Facebook AI's KRISP (Knowledge-Enhanced Vision-Language Models) with ~75% performance using only 22% of parameters. Built for resource-constrained environments and edge deployment.
+Official repository of the paper: Revisiting KRISP: [A Lightweight Reproduction and Analysis of Knowledge-Enhanced Vision-Language Models](https://arxiv.org/pdf/2511.20795)
+
 
 ## Overview
 
